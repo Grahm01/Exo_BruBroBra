@@ -8,7 +8,7 @@ public class EdgarManager : MonoBehaviour
 {
     private NavMeshAgent Edgar;
 
-    public List<TargetPoint> targetPoints = new List<TargetPoint>();
+    public List<Transform> targetPoints = new List<Transform>();
     private int indexNextDestination = 0;
     private Vector3 actualDestination;
 
@@ -41,7 +41,7 @@ public class EdgarManager : MonoBehaviour
 
         }
 
-        actualDestination = targetPoints[indexNextDestination].GivePoint();
+        actualDestination = targetPoints[indexNextDestination].position;
         Edgar.SetDestination(actualDestination);
 
     }

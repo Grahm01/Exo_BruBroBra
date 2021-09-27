@@ -8,7 +8,7 @@ public class TobyManager : MonoBehaviour
 {
     private NavMeshAgent Toby;
 
-    public List<TargetPoint> targetPoints = new List<TargetPoint>();
+    public List<Transform> targetPoints = new List<Transform>();
     private int indexNextDestination = 0;
     private Vector3 actualDestination;
 
@@ -33,7 +33,7 @@ public class TobyManager : MonoBehaviour
 
     private void NextDestination()
     {
-        actualDestination = targetPoints[indexNextDestination].GivePoint();
+        actualDestination = targetPoints[indexNextDestination].position;
         Toby.SetDestination(actualDestination);
 
         indexNextDestination++;
